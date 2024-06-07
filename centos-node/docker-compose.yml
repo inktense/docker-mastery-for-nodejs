@@ -2,9 +2,9 @@ version: '2.2'
 
 services:
   web:
-    image: sample-02
+    image: centos-node
     init: true
     build: .
     ports:
-      - "8080:3000"
+      - "3000:3000"
 

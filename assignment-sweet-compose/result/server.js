@@ -11,7 +11,7 @@ var express = require('express'),
     io = require('socket.io')(server);
 
 io.set('transports', ['polling']);
-
+// test  hk
 var port = process.env.PORT || 4000;
 
 io.sockets.on('connection', function (socket) {

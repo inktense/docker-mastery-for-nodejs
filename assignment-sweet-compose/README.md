@@ -10,22 +10,22 @@ of the "result" app using all the things you learned in this section.
 
 ## The finished compose.yml should include
 
-* No compose file version! (new as of 2020)
-* Healthcheck for postgres, taken from the depends_on lecture
-* Healthcheck for redis, test command is "redis-cli ping"
-* vote service depends on redis service
-* result service depends on db service
-* worker depends on db and redis services
-* remember to add the service_healthy to depends on objects
-* result is a Node.js app in subdirectory result. Let's bind-mount that
-* result should be built from the Dockerfile in ./result/
+* No compose file version! (new as of 2020)                                   x
+* Healthcheck for postgres, taken from the depends_on lecture                 x
+* Healthcheck for redis, test command is "redis-cli ping"                     x
+* vote service depends on redis service                                       x
+* result service depends on db service                                        x
+* worker depends on db and redis services                                     x
+* remember to add the service_healthy to depends on objects                   x
+* result is a Node.js app in subdirectory result. Let's bind-mount that       x
+* result should be built from the Dockerfile in ./result/                     x
 * Add a traefik proxy service from proxy lecture example. Have it run
 on a published port of your choosing and direct vote.localhost and
-result.localhost to their respective services so you can use Chrome
+result.localhost to their respective services so you can use Chrome           x
 * Add nodemon to the result service based on file watching lecture. You
-may need to get nodemon into the result image somehow.
-* Enable `NODE_ENV=development` mode for result
-* Enable debug and publish debug port for result
+may need to get nodemon into the result image somehow.                        x
+* Enable `NODE_ENV=development` mode for result                               x
+* Enable debug and publish debug port for result                              x
 
 ## Things to test once finished to ensure it's working
 
@@ -36,3 +36,13 @@ when vote or result are waiting on db or redis to start
 * Goto vote.localhost and result.localhost and ensure you can vote and see result
 
 Good Luck!
+
+
+## PERSONAL NOTES
+
+Using the following command to test
+```
+docker-compose up result 
+
+docker-compose run result npm install nodemon --save-dev
+```

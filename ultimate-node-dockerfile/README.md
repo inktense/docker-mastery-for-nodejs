@@ -6,14 +6,14 @@ Goal: take the Dockerfile in this directory and make it the ULTIMATE for a combi
 
 ## The finished Dockerfile should include
 
-* Create a multi-stage Dockerfile that supports specific images for production, testing, and development.
-* devDependencies should not exist in production image.
-* Use `npm ci` to install production dependencies.
+* Create a multi-stage Dockerfile that supports specific images for production, testing, and development.  D
+* devDependencies should not exist in production image.   D
+* Use `npm ci` to install production dependencies. D
 * Use Scenario 1 for setting up node_modules (the simple version).
-* Set NODE_ENV properly for dev and prod.
-* The dev stage should run (CMD) nodemon from devDependencies. Either by updating the `$PATH` or hard-coding the path to nodemon.
-* Edit docker-compose.yml to target the dev stage.
-* Add LABELS from OCI standard (values are up to you) to all images.
+* Set NODE_ENV properly for dev and prod.   D
+* The dev stage should run (CMD) nodemon from devDependencies. Either by updating the `$PATH` or hard-coding the path to nodemon. D
+* Edit docker-compose.yml to target the dev stage. D
+* Add LABELS from OCI standard (values are up to you) to all images. D
 * Add `npm config list` output before running `npm install`.
 * Create a test stage that runs `npm audit`.
 * `./tests` directory should only exist in test image.
@@ -23,11 +23,11 @@ Goal: take the Dockerfile in this directory and make it the ULTIMATE for a combi
 
 ## BONUS
 
-* Add a security scanner to test stage and test it. Trivy (replaced microscanner) [trivy](https://github.com/aquasecurity/trivy)
+* Add a security scanner to test stage and test it. Trivy (replaced microscanner) [trivy](https://github.com/aquasecurity/trivy) D
 * Add Best Practices from an earlier section, including:
   * Enable BuildKit and try a build.
-  * Add tini to images so containers will receive shutdown signals.
-  * Enable the non-root Node.js user for all dev/prod images.
+  * Add tini to images so containers will receive shutdown signals.  D
+  * Enable the non-root Node.js user for all dev/prod images.  D
   * You might need root user for test or scanning images depending on what you're doing (test and find out!)
 
 ## Things to test once finished to ensure it's working
